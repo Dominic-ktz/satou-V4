@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "discord.js": "^13.2.0"
+  },
+  "name": "satou-v4",
+  "description": "### The open source version of Satou-chan",
+  "version": "4.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dominic-ktz/satou-V4.git"
+  },
+  "author": "GWorks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dominic-ktz/satou-V4/issues"
+  },
+  "homepage": "https://github.com/Dominic-ktz/satou-V4#readme"
+}
