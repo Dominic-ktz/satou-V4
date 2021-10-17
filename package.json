@@ -1,12 +1,16 @@
 {
   "dependencies": {
-    "discord.js": "^13.2.0"
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.24.0",
+    "discord.js": "^13.2.0",
+    "fs": "^0.0.1-security",
+    "node-appwrite": "^2.5.0"
   },
   "name": "satou-v4",
   "description": "### The open source version of Satou-chan",
   "version": "4.0.0",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
