@@ -11,6 +11,7 @@ satou.appwrite
     .setKey(satou.config.API.appwrite.key);
 satou.database = new awsdk.Database(satou.appwrite);
 satou.aliases = new Collection();
+satou.color = require('./configuration/color.json');
 
 //Register commands
 const commandFolders = fs.readdirSync('./commands/commands');
