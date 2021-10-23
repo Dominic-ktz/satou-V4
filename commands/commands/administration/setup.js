@@ -18,27 +18,59 @@ const firstrow = new MessageActionRow().addComponents(
         .setEmoji('🌏')
         .setCustomId('updatelanguage')
         .setLabel('Change language')
-        .setStyle('PRIMARY'),
+        .setStyle('SECONDARY'),
     new MessageButton()
         .setEmoji('❗')
         .setCustomId('updateprefix')
         .setLabel('Update prefix')
-        .setStyle('PRIMARY')
+        .setStyle('SECONDARY')
 );
 
-message.channel.send({
+ message.channel.send({
     embeds: [firstembed],
     components: [firstrow]
-});
+}).then((msg) => {
+     const filter = (interaction) => {
+         if (interaction.user.id === message.author.id) return true;
+         return interaction.reply({content: "You are not allowed to do this"})
+     }
 
-const filter = (interaction) => {
-    if (interaction.user.id === message.author.id) return true;
-    return interaction.reply({content: "You are not allowed to do this"})
-}
+     const collectorone = message.channel.createMessageComponentCollector({filter, max: 1})
 
-const collectorone = message.channel.createMessageComponentCollector({filter, max: 1})
+     collectorone.on('end', (Btninteraction) => {
+         if (Btninteraction.first().customId == "updatelanguage") {
+             languagePage(satou, message);
+             msg.delete();
+         }
+     });
+ });
 
-    collectorone.on('end', (Btninteraction) => {
-        console.log(Btninteraction.first().customId);
-    });
+    const languagePage = () => {
+        const firstembed = new MessageEmbed()
+            .setTitle("Setup - Language")
+            .setDescription("Choose your language below")
+            .setColor(satou.color.PINK)
+            .setTimestamp();
+        const firstrow = new MessageActionRow().addComponents(
+            new MessageButton()
+                .setEmoji('🇺🇸')
+                .setCustomId('langENG')
+                .setLabel('English')
+                .setStyle('SECONDARY'),
+            new MessageButton()
+                .setEmoji('🇩🇪')
+                .setCustomId('langDE')
+                .setLabel('Deutsch')
+                .setStyle('SECONDARY')
+        );
+
+        message.channel.send({
+            embeds: [firstembed],
+            components: [firstrow]
+        });
+        return
+    }// LangEnd
+
 };
+
+
