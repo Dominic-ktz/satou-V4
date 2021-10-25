@@ -1,4 +1,7 @@
-module.exports = (satou, guild) => {
+const guildSchema = require('../configuration/database/guildSchema');
+module.exports = async (satou, guild) => {
     console.log(`Joined Guild ${guild.name}`)
-    satou.database.createDocument(satou.config.API.appwrite.collections.guild, {"guildID": `${guild.id}`});
+    const createGuild = await guildSchema.create({
+        guildId: guild.id,
+    })
 }

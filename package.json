@@ -5,7 +5,7 @@
     "discord-api-types": "^0.24.0",
     "discord.js": "^13.2.0",
     "fs": "^0.0.1-security",
-    "node-appwrite": "^2.5.0"
+    "mongoose": "5.11.15"
   },
   "name": "satou-v4",
   "description": "### The open source version of Satou-chan",
@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/Dominic-ktz/satou-V4/issues"
   },
-  "homepage": "https://github.com/Dominic-ktz/satou-V4#readme"
+  "homepage": "https://github.com/Dominic-ktz/satou-V4#readme",
+  "keywords": []
 }
