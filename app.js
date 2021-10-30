@@ -8,6 +8,8 @@ satou.config = require('./configuration/config.json');
 satou.commands = new Collection();
 satou.aliases = new Collection();
 satou.color = require('./configuration/color.json');
+satou.emoji = require('./configuration/emojis.json')
+satou.database = require('./functions/update');
 
 mongoose.connect(satou.config.API.mongoURL, {
     useNewUrlParser: true,

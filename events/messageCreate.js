@@ -2,6 +2,7 @@ module.exports = (satou, message) => {
     // Ignore all bots
     if (message.author.bot) return;
 
+if (message.content.startsWith("s-")) {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
@@ -14,5 +15,6 @@ module.exports = (satou, message) => {
     } catch (error) {
         return message.channel.send({content: "Error while execute command" + error});
     }
+}
 
 };
