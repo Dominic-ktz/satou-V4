@@ -1,7 +1,9 @@
-const {Client, Intents, Collection} = require('discord.js')
+const { Client, Intents, Collection } = require('discord.js')
 const fs = require('fs');
 const mongoose = require('mongoose')
-const satou = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] })
+const satou = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] });
+
+
 
 //Require functions
 satou.config = require('./configuration/config.json');
@@ -9,7 +11,8 @@ satou.commands = new Collection();
 satou.aliases = new Collection();
 satou.color = require('./configuration/color.json');
 satou.emoji = require('./configuration/emojis.json')
-satou.database = require('./functions/update');
+satou.guilddatabase = require('./configuration/database/guildSchema');
+satou.userdatabase = require('./configuration/database/logSchema');
 
 mongoose.connect(satou.config.API.mongoURL, {
     useNewUrlParser: true,
