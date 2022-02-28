@@ -9,6 +9,7 @@ const satou = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_M
 satou.config = require('./configuration/config.json');
 satou.commands = new Collection();
 satou.aliases = new Collection();
+satou.cooldown = new Collection();
 satou.color = require('./configuration/color.json');
 satou.emoji = require('./configuration/emojis.json')
 satou.guilddatabase = require('./configuration/database/guildSchema');

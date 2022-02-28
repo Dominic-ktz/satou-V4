@@ -3,7 +3,7 @@ module.exports.config = {
     name: "ping",
     description: "Ping the Bot and the API",
     aliases: [],
-    cooldown: 5,
+    cooldown: 50000,
     example: "ping",
     usage: "ping",
     category: "information"
