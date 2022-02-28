@@ -1,0 +1,10 @@
+{
+    "error": {
+        "cooldown": "Für diesen Befehl ist cooldown aktiviert.",
+        "nopermsuser": "Du hast keine Berechtigung, diesen Befehl zu nutzen.",
+        "nopermsbot": "Ich habe keine Rechte diesen Befehl auszuführen.",
+        "commanddisabled": "Dieser Befehl ist deaktiviert.",
+        "commandnotfound": "Hmmm... Diesen Befehl kenne ich nicht. Vielleicht hast du dich vertippt?",
+        "commandexecutionerror": "Oh nein. Da ist mir wohl ein kleiner fehler unterlaufen."
+    }
+}

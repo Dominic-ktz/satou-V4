@@ -12,8 +12,10 @@ satou.aliases = new Collection();
 satou.cooldown = new Collection();
 satou.color = require('./configuration/color.json');
 satou.emoji = require('./configuration/emojis.json')
+satou.log = require('./configuration/database/logSchema');
 satou.guilddatabase = require('./configuration/database/guildSchema');
 satou.userdatabase = require('./configuration/database/logSchema');
+satou.guildmanager = require('./functions/guild.js');
 
 mongoose.connect(satou.config.API.mongoURL, {
     useNewUrlParser: true,

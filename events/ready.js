@@ -1,8 +1,6 @@
-const logSchema = require('../configuration/database/logSchema');
-
 module.exports = (satou, message) => {
     console.log("Ready")
-    logSchema.create({
+    satou.log.create({
         message: "Bot has started",
         time: new Date()
     })

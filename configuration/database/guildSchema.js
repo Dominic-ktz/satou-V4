@@ -14,7 +14,7 @@ const guildConfigSchema = new mongoose.Schema({
     language: {
         type: mongoose.SchemaTypes.String,
         required: true,
-        default: "en",
+        default: "english",
     },
     globalChat: {
         type: mongoose.SchemaTypes.String,

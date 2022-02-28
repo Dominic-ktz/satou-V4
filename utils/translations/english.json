@@ -1,0 +1,10 @@
+{
+    "error": {
+        "cooldown": "This command is on cooldown. Please try again later.",
+        "nopermsuser": "You do not have permission to use this command.",
+        "nopermsbot": "I do not have permission to execute this command.",
+        "commanddisabled": "This command is disabled.",
+        "commandnotfound": "Hrmm... Looks like this command does not exist.",
+        "commandexecutionerror": "Oh no! Something went wrong while executing this command."
+    }
+}
