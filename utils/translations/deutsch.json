@@ -1,10 +1,35 @@
 {
     "error": {
+        "title": "Oh Nein! Ein fehler ist aufgetreten.",
         "cooldown": "Für diesen Befehl ist cooldown aktiviert.",
         "nopermsuser": "Du hast keine Berechtigung, diesen Befehl zu nutzen.",
         "nopermsbot": "Ich habe keine Rechte diesen Befehl auszuführen.",
         "commanddisabled": "Dieser Befehl ist deaktiviert.",
         "commandnotfound": "Hmmm... Diesen Befehl kenne ich nicht. Vielleicht hast du dich vertippt?",
         "commandexecutionerror": "Oh nein. Da ist mir wohl ein kleiner fehler unterlaufen."
+    },
+    "info": {
+        "messagedeletetwentysecs": "Diese Nachricht wird nach 20 Sekunden gelöscht."
+    },
+    "success": {
+        "name": "Erfolg"
+    },
+    "settings": {
+        "title": "Einstellungen",
+        "description": "Hier kannst du die Einstellungen für den Bot vornehmen. Folgende parameter sind verfügbar:",
+        "prefix": {
+            "title": "Prefix",
+            "toolong": "Der Prefix darf maximal 5 Zeichen beinhalten.",
+            "success": "Der Prefix wurde erfolgreich geändert."
+        },
+        "language": {
+            "title": "Sprache",
+            "success": "Die Sprache wurde erfolgreich geändert.",
+            "invalid": "Die Sprache ist nicht verfügbar."
+        },
+        "disablecommands": "Deaktiviere Befehle",
+        "enablecommands": "Aktiviere Befehle",
+        "invalid": "Die Einstellungen konnten nicht gefunden werden."
+
     }
 }

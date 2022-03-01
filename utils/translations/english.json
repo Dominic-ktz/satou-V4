@@ -1,10 +1,35 @@
 {
     "error": {
+        "title": "Oh No! An Error Occurred.",
         "cooldown": "This command is on cooldown. Please try again later.",
         "nopermsuser": "You do not have permission to use this command.",
         "nopermsbot": "I do not have permission to execute this command.",
         "commanddisabled": "This command is disabled.",
         "commandnotfound": "Hrmm... Looks like this command does not exist.",
         "commandexecutionerror": "Oh no! Something went wrong while executing this command."
+    },
+    "info": {
+        "messagedeletetwentysecs": "This message will be deleted in 20 seconds."
+    },
+    "success": {
+        "name": "Success"
+    },
+    "settings": {
+        "title": "Settings",
+        "description": "Here you can change the settings of the bot. Following are the settings:",
+        "prefix": {
+            "title": "Prefix",
+            "toolong": "The prefix cannot be longer than 5 characters.",
+            "success": "The prefix has been changed successfully."
+        },
+        "language": {
+            "title": "Language",
+            "success": "The language has been changed successfully.",
+            "invalid": "The language you specified is invalid."
+        },
+        "disablecommands": "Disable commands",
+        "enablecommands": "Enable commands",
+        "invalid": "The setting you specified is invalid."
+
     }
 }

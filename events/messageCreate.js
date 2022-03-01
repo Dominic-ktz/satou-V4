@@ -73,9 +73,7 @@ module.exports = async(satou, message) => {
                 return message.channel.send({ content: message.language.error.commandexecutionerror });
             }
         } else {
-            message.channel.send({
-                content: message.language.error.commandnotfound
-            });
+            satou.embed.error(message, message.language.error.commandnotfound);
         }
     }
 

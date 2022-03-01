@@ -27,6 +27,12 @@ const guildConfigSchema = new mongoose.Schema({
         default: false,
     },
 
+    disabledcommands: {
+        type: mongoose.SchemaTypes.Array,
+        required: true,
+        default: [],
+    },
+
     joinmsgchannel: {
         type: mongoose.SchemaTypes.String,
         required: true,
