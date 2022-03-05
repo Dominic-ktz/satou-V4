@@ -30,6 +30,11 @@
         "disablecommands": "Disable commands",
         "enablecommands": "Enable commands",
         "invalid": "The setting you specified is invalid."
-
+    },
+    "anime": {
+        "happy": {
+            "message": "-username- is happy!",
+            "randommessages": ["Looks like someone had a good day"]
+        }
     }
 }

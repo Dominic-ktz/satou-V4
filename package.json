@@ -7,7 +7,8 @@
     "fs": "^0.0.1-security",
     "humanize-duration": "^3.27.1",
     "moment": "^2.29.1",
-    "mongoose": "5.11.15"
+    "mongoose": "5.11.15",
+    "random-gif-api": "^1.0.5"
   },
   "name": "satou-v4",
   "description": "### The open source version of Satou-chan",

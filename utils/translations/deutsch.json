@@ -30,6 +30,11 @@
         "disablecommands": "Deaktiviere Befehle",
         "enablecommands": "Aktiviere Befehle",
         "invalid": "Die Einstellungen konnten nicht gefunden werden."
-
+    },
+    "anime": {
+        "happy": {
+            "message": "-username- ist happy!",
+            "randommessages": ["Da ist ja wer ziehmlich gut gelaunt", "Da hat wohl wer einen guten Tag gehabt"]
+        }
     }
 }

@@ -17,6 +17,7 @@ satou.guilddatabase = require('./configuration/database/guildSchema');
 satou.userdatabase = require('./configuration/database/logSchema');
 satou.guildmanager = require('./functions/guild.js');
 satou.embed = require('./functions/embed.js');
+satou.rga = require('random-gif-api');
 
 mongoose.connect(satou.config.API.mongoURL, {
     useNewUrlParser: true,
