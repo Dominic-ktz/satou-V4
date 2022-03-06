@@ -36,5 +36,21 @@
             "message": "-username- ist happy!",
             "randommessages": ["Da ist ja wer ziehmlich gut gelaunt", "Da hat wohl wer einen guten Tag gehabt"]
         }
+    },
+    "marry": {
+        "propose": {
+            "title": "Heiratsantrag",
+            "noUser": "Du musst auch einen anderen User erwähnen.",
+            "self": "Du kannst dich nicht selbst heiraten.",
+            "bot": "Du kannst keinen Bot heiraten... Naja. jetzt noch nicht aber irgendwann vielleicht.",
+            "satou": "Ich bin leider schon glücklich vergeben an Shio :)",
+            "alreadyMarried": "Du bist schon verheiratet.",
+            "message": "Hey -usertwo-, du hast ein Heiratsantrag von -userone- bekommen. Wenn du annehmen willst, klicke auf Annehmen. Wenn du nicht willst, klicke auf Ablehnen.",
+            "yes": "Akkzeptieren",
+            "no": "Ablehnen",
+            "noClicked": "Oh. Das ist schade. Der antrag wurde abgelehnt.",
+            "yesClicked": "Ja dein Antrag wurde angenommen. -userone- ist nun verheiratet mit -usertwo-.",
+            "notYouClick": "Du darfst den antrag nicht annehmen."
+        }
     }
 }

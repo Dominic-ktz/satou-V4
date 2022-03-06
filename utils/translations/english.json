@@ -36,5 +36,21 @@
             "message": "-username- is happy!",
             "randommessages": ["Looks like someone had a good day"]
         }
+    },
+    "marry": {
+        "propose": {
+            "title": "Marriage Proposal",
+            "noUser": "You need to specify a user to propose to.",
+            "self": "You cannot marry yourself.",
+            "bot": "You cannot marry a bot.",
+            "satou": "No i already happy live together with Shio :) ",
+            "alreadyMarried": "You are already married.",
+            "message": "Hey -usertwo- you have been proposed to by -userone-! Do you accept?",
+            "yes": "Yes",
+            "no": "No",
+            "noClicked": "Oh. Looks like you didn't want to marry -userone-.",
+            "yesClicked": "Yay! You are now married to -userone-!",
+            "notYouClick": "You're not allowed to do that."
+        }
     }
 }

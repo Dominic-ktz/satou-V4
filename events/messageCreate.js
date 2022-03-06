@@ -16,12 +16,9 @@ module.exports = async(satou, message) => {
         message.language = language;
         let commandfile =
             satou.commands.get(cmd.slice(guildconfig.prefix.length)) ||
-            satou.commands.get(satou.aliases.get(cmd.slice(satou.config.settings.prefix.length)));
+            satou.commands.get(satou.aliases.get(cmd.slice(guildconfig.prefix.length)));
 
         if (commandfile) {
-
-            // Get guilds language
-
 
             //Check for cooldown
             if (commandfile.config.cooldown) {
