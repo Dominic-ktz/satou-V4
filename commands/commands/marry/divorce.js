@@ -1,3 +1,6 @@
+const { Client, Message, MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
+const { replaceone, replacetwo } = require('../../../functions/replace.js');
+
 module.exports.config = {
     name: "divorce",
     description: "",
@@ -13,12 +16,15 @@ module.exports.config = {
  * @param {Message} message
  */
 module.exports.run = async(satou, message) => {
+    const user = message.mentions.members.first();
     const count1 = await satou.marrydatabase.countDocuments({ user1: message.author.id });
     const count2 = await satou.marrydatabase.countDocuments({ user2: message.author.id });
-    if (count1 < 1 || count2 < 1) return satou.embed.error(message, message.language.marry.divorce.notMarried);
+    console.log(count1, count2);
+    if (count1 == 0 && count2 == 0) return satou.embed.error(message, message.language.marry.divorce.notMarried);
+
     const embed = new MessageEmbed()
         .setTitle(message.language.marry.divorce.title)
-        .setDescription(message.language.marry.divorce.message)
+        .setDescription(replaceone(message.language.marry.divorce.message, "-usertwo-", user.displayName))
         .setColor(satou.color.PINK)
         .setTimestamp();
     const row = new MessageActionRow().addComponents(
@@ -41,6 +47,23 @@ module.exports.run = async(satou, message) => {
     const collection = message.channel.createMessageComponentCollector({ filter, max: 1, time: 300000 });
 
     collection.on('collect', async(interaction) => {
-
+        if (interaction.customId === "yes") {
+            if (count1 > 0) {
+                await satou.marrydatabase.deleteOne({ user1: message.author.id });
+            } else if (count2 > 0) {
+                await satou.marrydatabase.deleteOne({ user2: message.author.id });
+            }
+            const embed = new MessageEmbed()
+                .setTitle(message.language.marry.divorce.title)
+                .setDescription(replacetwo(message.language.marry.divorce.success, "-userone-", message.member.displayName, "-usertwo-", user.displayName))
+                .setColor(satou.color.RED);
+            interaction.reply({ embeds: [embed] });
+        } else {
+            const embed = new MessageEmbed()
+                .setTitle(message.language.marry.divorce.title)
+                .setDescription(replacetwo(message.language.marry.divorce.canceled, "-userone-", message.member.displayName, "-usertwo-", user.displayName))
+                .setColor(satou.color.RED);
+            interaction.reply({ embeds: [embed] });
+        }
     });
 }

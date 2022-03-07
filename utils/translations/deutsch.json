@@ -39,7 +39,7 @@
     },
     "marry": {
         "propose": {
-            "title": "Heiratsantrag",
+            "title": "💖 Heiratsantrag",
             "noUser": "Du musst auch einen anderen User erwähnen.",
             "self": "Du kannst dich nicht selbst heiraten.",
             "bot": "Du kannst keinen Bot heiraten... Naja. jetzt noch nicht aber irgendwann vielleicht.",
@@ -51,6 +51,15 @@
             "noClicked": "Oh. Das ist schade. Der antrag wurde abgelehnt.",
             "yesClicked": "Yay, -userone-'s Antrag wurde angenommen. -userone- ist nun verheiratet mit -usertwo-.",
             "notYouClick": "Du darfst den antrag nicht annehmen."
+        },
+        "divorce": {
+            "title": "💔 Trennen",
+            "notMarried": "Du bist mit niemanden Verheiratet.",
+            "message": "Möchtest du wirklich dich von -usertwo- trennen? Ihr hattet doch so eine schöne Zeit miteinander.",
+            "yes": "Ja",
+            "no": "Nein",
+            "success": "Schade... -userone- hat sich von -usertwo- getrennt. Sie waren doch so ein schönes Paar.",
+            "canceled": "Puh... Ich dachte schon, du wolltest dich von -usertwo- trennen. Aber du hast es abgelehnt."
         }
     }
 }

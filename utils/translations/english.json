@@ -51,6 +51,15 @@
             "noClicked": "Oh. Looks like you didn't want to marry -userone-.",
             "yesClicked": "Yay! You are now married to -userone-!",
             "notYouClick": "You're not allowed to do that."
+        },
+        "divorce": {
+            "title": "💔 Divorce",
+            "notMarried": "You're not married with someone.",
+            "message": "Are you sure you want to divorce -userone-? You had a good time together with -userone-.",
+            "yes": "Yes",
+            "no": "No",
+            "success": "You are now divorced from -userone-! Thats really sad.",
+            "canceled": "You have canceled the divorce request."
         }
     }
 }

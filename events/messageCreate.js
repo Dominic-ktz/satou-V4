@@ -39,10 +39,12 @@ module.exports = async(satou, message) => {
             }
 
             //Check if user have permissions
-            if (!message.member.permissions.has(commandfile.config.permissions)) {
-                return message.channel.send({
-                    content: message.language.error.nopermsuser
-                });
+            if (commandfile.config.permissions) {
+                if (!message.member.permissions.has(commandfile.config.permissions)) {
+                    return message.channel.send({
+                        content: message.language.error.nopermsuser
+                    });
+                }
             }
 
             //Check if bot have permissions
