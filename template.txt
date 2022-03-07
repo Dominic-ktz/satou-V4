@@ -1,0 +1,16 @@
+module.exports.config = {
+    name: "",
+    description: "",
+    aliases: [],
+    cooldown: 0,
+    example: "",
+    usage: "",
+    category: ""
+};
+/**
+ *
+ * @param {Client} client
+ * @param {Message} message
+ */
+module.exports.run = async(satou, message) => {
+}

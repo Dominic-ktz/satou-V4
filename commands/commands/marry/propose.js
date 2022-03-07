@@ -18,13 +18,12 @@ module.exports.config = {
  */
 module.exports.run = async(satou, message) => {
     const usertwo = message.mentions.members.first();
-    console.log(usertwo.id);
     if (!usertwo) return satou.embed.error(message, message.language.marry.propose.noUser);
     if (usertwo.id === message.author.id) return satou.embed.error(message, message.language.marry.propose.self);
     if (usertwo.bot) return satou.embed.error(message, message.language.marry.propose.bot);
     if (usertwo.id === satou.user.id) return satou.embed.error(message, message.language.marry.propose.satou);
-    const count = await satou.marrydatabase.countDocuments({ userone: message.author.id, usertwo: usertwo.user.id });
-    const count2 = await satou.marrydatabase.countDocuments({ userone: usertwo.user.id, usertwo: message.author.id });
+    const count = await satou.marrydatabase.countDocuments({ user1: message.author.id, user2: usertwo.user.id });
+    const count2 = await satou.marrydatabase.countDocuments({ user1: usertwo.user.id, user2: message.author.id });
     if (count > 0 || count2 > 0) return satou.embed.error(message, message.language.marry.propose.alreadyMarried);
 
     const embed = new MessageEmbed()
@@ -43,7 +42,7 @@ module.exports.run = async(satou, message) => {
         .setCustomId('no')
 
     );
-    message.channel.send({ embeds: [embed], components: [row] });
+    const msg = message.channel.send({ embeds: [embed], components: [row] });
 
     const filter = (interaction) => {
         if (interaction.user.id === usertwo.user.id) return true;
@@ -52,18 +51,16 @@ module.exports.run = async(satou, message) => {
 
     const collection = message.channel.createMessageComponentCollector({ filter, max: 1, time: 300000 });
 
-    collection.on('end', async(interaction) => {
-        if (interaction.first().customId == "no") {
-            console.log('n');
+    collection.on('collect', async(interaction) => {
+        if (interaction.customId == "no") {
             const embed = new MessageEmbed()
                 .setTitle(message.language.marry.propose.title)
                 .setDescription(replaceone(message.language.marry.propose.noClicked, "-userone-", message.member.username))
                 .setColor(satou.color.BLUE)
                 .setTimestamp();
-            return message.channel.send({ embeds: [embed] });
+            return interaction.reply({ embeds: [embed] }).then((await msg).delete());
         }
-        if (interaction.first().customId == "yes") {
-            console.log("y");
+        if (interaction.customId == "yes") {
             try {
                 const marryAdd = await satou.marrydatabase.create({
                     user1: message.author.id,
@@ -71,10 +68,10 @@ module.exports.run = async(satou, message) => {
                 });
                 const embed = new MessageEmbed()
                     .setTitle(message.language.marry.propose.title)
-                    .setDescription(replacetwo(message.language.marry.propose.yesClicked, "-userone-", message.member.username, "-usertwo-", usertwo.displayName))
+                    .setDescription(replacetwo(message.language.marry.propose.yesClicked, "-userone-", message.member.displayName, "-usertwo-", usertwo.displayName))
                     .setColor(satou.color.PINK)
                     .setTimestamp();
-                return message.channel.send({ embeds: [embed] });
+                return interaction.reply({ embeds: [embed] }).then((await msg).delete());
             } catch (error) {
                 satou.log.create({
                     message: error,

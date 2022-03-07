@@ -46,10 +46,10 @@
             "satou": "Ich bin leider schon glücklich vergeben an Shio :)",
             "alreadyMarried": "Du bist schon verheiratet.",
             "message": "Hey -usertwo-, du hast ein Heiratsantrag von -userone- bekommen. Wenn du annehmen willst, klicke auf Annehmen. Wenn du nicht willst, klicke auf Ablehnen.",
-            "yes": "Akkzeptieren",
+            "yes": "Akzeptieren",
             "no": "Ablehnen",
             "noClicked": "Oh. Das ist schade. Der antrag wurde abgelehnt.",
-            "yesClicked": "Ja dein Antrag wurde angenommen. -userone- ist nun verheiratet mit -usertwo-.",
+            "yesClicked": "Yay, -userone-'s Antrag wurde angenommen. -userone- ist nun verheiratet mit -usertwo-.",
             "notYouClick": "Du darfst den antrag nicht annehmen."
         }
     }
