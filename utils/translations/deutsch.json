@@ -55,6 +55,7 @@
         "divorce": {
             "title": "💔 Trennen",
             "notMarried": "Du bist mit niemanden Verheiratet.",
+            "noUser": "Bitte erwähne auch die Person, mit der du zurzeit noch zusammen bist!",
             "message": "Möchtest du wirklich dich von -usertwo- trennen? Ihr hattet doch so eine schöne Zeit miteinander.",
             "yes": "Ja",
             "no": "Nein",

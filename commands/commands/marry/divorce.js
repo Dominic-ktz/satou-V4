@@ -17,6 +17,7 @@ module.exports.config = {
  */
 module.exports.run = async(satou, message) => {
     const user = message.mentions.members.first();
+    if (!user) return satou.embed.error(message, message.language.marry.divorce.noUser);
     const count1 = await satou.marrydatabase.countDocuments({ user1: message.author.id });
     const count2 = await satou.marrydatabase.countDocuments({ user2: message.author.id });
     console.log(count1, count2);
@@ -57,13 +58,13 @@ module.exports.run = async(satou, message) => {
                 .setTitle(message.language.marry.divorce.title)
                 .setDescription(replacetwo(message.language.marry.divorce.success, "-userone-", message.member.displayName, "-usertwo-", user.displayName))
                 .setColor(satou.color.RED);
-            interaction.reply({ embeds: [embed] });
+            interaction.reply({ embeds: [embed] }).then((await msg).delete());
         } else {
             const embed = new MessageEmbed()
                 .setTitle(message.language.marry.divorce.title)
                 .setDescription(replacetwo(message.language.marry.divorce.canceled, "-userone-", message.member.displayName, "-usertwo-", user.displayName))
                 .setColor(satou.color.RED);
-            interaction.reply({ embeds: [embed] });
+            interaction.reply({ embeds: [embed] }).then((await msg).delete());
         }
     });
 }

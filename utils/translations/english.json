@@ -55,6 +55,7 @@
         "divorce": {
             "title": "💔 Divorce",
             "notMarried": "You're not married with someone.",
+            "noUser": "Please also mention the person you are currently married to!",
             "message": "Are you sure you want to divorce -userone-? You had a good time together with -userone-.",
             "yes": "Yes",
             "no": "No",
