@@ -32,9 +32,12 @@
         "invalid": "The setting you specified is invalid."
     },
     "anime": {
+        "noUser": "You need to mention someone.",
         "happy": {
-            "message": "-username- is happy!",
-            "randommessages": ["Looks like someone had a good day"]
+            "message": "-username- is happy!"
+        },
+        "angry": {
+            "message": "-username- is very angry!"
         }
     },
     "marry": {

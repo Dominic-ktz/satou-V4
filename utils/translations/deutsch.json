@@ -32,9 +32,15 @@
         "invalid": "Die Einstellungen konnten nicht gefunden werden."
     },
     "anime": {
+        "noUser": "Du musst auch jemanden erwähnen.",
         "happy": {
-            "message": "-username- ist happy!",
-            "randommessages": ["Da ist ja wer ziehmlich gut gelaunt", "Da hat wohl wer einen guten Tag gehabt"]
+            "message": "-username- ist happy!"
+        },
+        "angry": {
+            "message": "-username- ist ziemlich wütend"
+        },
+        "bite": {
+            "message": "Oh Nein. -username- wurde von -otheruser- gebissen."
         }
     },
     "marry": {
