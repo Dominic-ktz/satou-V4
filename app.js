@@ -1,17 +1,19 @@
-const { Client, Intents, Collection } = require('discord.js')
+const { Client, Intents, Collection } = require('discord.js');
+const { REST } = require('@discordjs/rest');
+const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const satou = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] });
 const Table = require('cli-table');
-
 
 //Require functions
 satou.config = require('./configuration/config.json');
 satou.commands = new Collection();
 satou.aliases = new Collection();
+satou.slashCommands = new Collection();
 satou.cooldown = new Collection();
 satou.color = require('./configuration/color.json');
-satou.emoji = require('./configuration/emojis.json')
+satou.emoji = require('./configuration/emojis.json');
 satou.log = require('./configuration/database/logSchema');
 satou.guilddatabase = require('./configuration/database/guildSchema');
 satou.userdatabase = require('./configuration/database/logSchema');
@@ -46,13 +48,22 @@ for (const folder of commandFolders) {
 }
 console.log(table.toString());
 
+//Register Slash Commands
+
+const slashCommands = [];
+const slashFolders = fs.readdirSync('./commands/slashcommands');
+for (const folder of slashFolders) {
+    const slashFiles = fs.readdirSync(`./commands/slashcommands/${folder}`).filter(file => file.endsWith('.js'));
+    for (const file of slashFiles) {
+        const command = require(`./commands/slashcommands/${folder}/${file}`);
+        satou.slashCommands.set(command.data.name, command);
+    }
+}
+
 //Register Events
 const files = fs.readdirSync("./events").filter(file => file.endsWith(".js"));
-// Loop over each file
 for (const file of files) {
-    // Split the file at its extension and get the event name
     const eventName = file.split(".")[0];
-    // Require the file
     const event = require(`./events/${file}`);
     satou.on(eventName, event.bind(null, satou));
 }

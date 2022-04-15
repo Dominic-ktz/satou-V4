@@ -1,10 +1,10 @@
-const { MessageEmbed, MessageActionRow, MessageButton, Interaction, Message, Client } = require('discord.js')
+const { MessageEmbed, MessageActionRow, MessageButton, Interaction, Message, Client } = require('discord.js');
 const { replaceone, replacetwo } = require('../../../functions/replace.js');
 
 
 module.exports.config = {
     name: "propose",
-    description: "",
+    description: "Propose to a user",
     aliases: [],
     cooldown: 10000,
     example: "propose @someone",
